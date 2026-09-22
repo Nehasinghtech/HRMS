@@ -1,0 +1,272 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    @apply m-0 bg-slate-100 font-sans text-slate-900 antialiased transition-colors dark:bg-slate-950 dark:text-slate-100;
+  }
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+}
+
+@layer components {
+  .login-page {
+    @apply flex min-h-screen items-center justify-center bg-slate-100 px-4 py-8;
+  }
+  .login-card {
+    @apply w-full max-w-md rounded-2xl bg-white p-6 shadow-xl shadow-slate-200/70 sm:p-9 dark:bg-slate-900 dark:shadow-black/20;
+  }
+  .login-card h1 {
+    @apply mb-2 text-center text-3xl font-bold tracking-tight text-slate-900;
+  }
+  .login-card > p {
+    @apply mb-7 text-center text-slate-500;
+  }
+  .form-group {
+    @apply mb-5;
+  }
+  .form-group label {
+    @apply mb-2 block text-sm font-semibold text-slate-700;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    @apply w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:border-slate-700 dark:bg-slate-800 dark:text-white;
+  }
+  .login-card button,
+  .primary-button {
+    @apply w-full rounded-lg bg-blue-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .error,
+  .error-message {
+    @apply mb-4 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700;
+  }
+  .success {
+    @apply rounded-lg bg-emerald-50 px-3 py-2 text-sm text-emerald-700;
+  }
+  .auth-link {
+    @apply mt-5 text-center text-sm text-slate-500;
+  }
+  .auth-link a {
+    @apply font-semibold text-blue-600 no-underline hover:text-blue-700;
+  }
+
+  .dashboard-layout,
+  .app-layout {
+    @apply min-h-screen bg-slate-100 dark:bg-slate-950;
+  }
+  .sidebar {
+    @apply fixed inset-y-0 left-0 z-30 hidden w-64 bg-slate-950 text-white md:block;
+  }
+  .sidebar-logo {
+    @apply border-b border-slate-800 px-6 py-6;
+  }
+  .sidebar-logo h2 {
+    @apply text-2xl font-bold;
+  }
+  .sidebar-logo span {
+    @apply mt-1 block text-sm text-slate-400;
+  }
+  .sidebar nav {
+    @apply flex flex-col gap-1 p-4;
+  }
+  .sidebar nav a {
+    @apply rounded-lg px-4 py-3 text-sm font-medium text-slate-300 no-underline transition hover:bg-slate-800 hover:text-white;
+  }
+  .sidebar nav a.active {
+    @apply bg-blue-600 text-white shadow-lg shadow-blue-950/30;
+  }
+  .main-content {
+    @apply min-w-0 md:ml-64;
+  }
+  .navbar {
+    @apply flex min-h-16 items-center justify-between gap-4 border-b border-slate-200 bg-white px-4 py-3 sm:px-8 dark:border-slate-800 dark:bg-slate-900;
+  }
+  .navbar h3 {
+    @apply text-base font-bold text-slate-900 sm:text-lg dark:text-white;
+  }
+  .navbar-user {
+    @apply flex min-w-0 items-center gap-3 text-sm font-medium text-slate-600 dark:text-slate-300;
+  }
+  .navbar-user span {
+    @apply max-w-32 truncate sm:max-w-none;
+  }
+  .navbar-user button,
+  .edit-button {
+    @apply rounded-lg bg-red-600 px-3 py-2 text-xs font-semibold text-white transition hover:bg-red-700 sm:px-4 sm:text-sm;
+  }
+  .dashboard-content,
+  .page-content {
+    @apply space-y-6 p-4 sm:p-6 lg:p-8;
+  }
+  .page-heading,
+  .employee-heading {
+    @apply flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between;
+  }
+  .page-heading h1,
+  .employee-heading h1 {
+    @apply text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl dark:text-white;
+  }
+  .page-heading p,
+  .employee-heading p {
+    @apply mt-1 text-sm text-slate-500;
+  }
+  .stats-grid {
+    @apply grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4;
+  }
+  .stat-card,
+  .employee-card,
+  .form-card,
+  .dashboard-section {
+    @apply rounded-xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6 dark:border-slate-800 dark:bg-slate-900;
+  }
+  .stat-card p {
+    @apply mb-2 text-sm text-slate-500;
+  }
+  .stat-card h2,
+  .stat-value {
+    @apply text-3xl font-bold text-slate-900;
+  }
+  .employee-card h2,
+  .dashboard-section h2 {
+    @apply mb-5 text-xl font-bold text-slate-900;
+  }
+  .profile-info-grid {
+    @apply grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3;
+  }
+  .profile-info-grid > div {
+    @apply rounded-lg bg-slate-50 px-4 py-3 dark:bg-slate-800;
+  }
+  .profile-info-grid span {
+    @apply mb-1 block text-xs font-medium uppercase tracking-wide text-slate-500;
+  }
+  .profile-info-grid strong {
+    @apply block break-words text-sm font-semibold text-slate-900 dark:text-white;
+  }
+  .table-container {
+    @apply overflow-x-auto;
+  }
+  table {
+    @apply w-full min-w-[640px] border-collapse text-left text-sm;
+  }
+  th,
+  td {
+    @apply border-b border-slate-200 px-4 py-3;
+  }
+  th {
+    @apply bg-slate-50 text-xs font-semibold uppercase tracking-wide text-slate-500;
+  }
+  td {
+    @apply text-slate-700 dark:text-slate-300;
+  }
+  .theme-toggle {
+    @apply rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700;
+  }
+  .profile-avatar {
+    @apply h-9 w-9 rounded-full object-cover ring-2 ring-slate-200 dark:ring-slate-700;
+  }
+  .primary-button,
+  .secondary-button {
+    @apply w-auto px-4 py-2.5;
+  }
+  .secondary-button {
+    @apply rounded-lg border border-slate-300 bg-white text-sm font-semibold text-slate-700 transition hover:bg-slate-50;
+  }
+  .search-box {
+    @apply mb-5;
+  }
+  .search-box input,
+  .search-box select {
+    @apply w-full rounded-lg border border-slate-300 px-3 py-2.5 outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100;
+  }
+  .form-grid {
+    @apply grid grid-cols-1 gap-x-5 gap-y-1 md:grid-cols-2;
+  }
+  .form-actions,
+  .filter-actions,
+  .action-buttons {
+    @apply flex flex-wrap items-center justify-end gap-3;
+  }
+  .form-actions {
+    @apply mt-6;
+  }
+  .filter-container {
+    @apply mb-6 flex flex-col gap-4 border-b border-slate-200 pb-5 lg:flex-row lg:items-end;
+  }
+  .filter-group {
+    @apply flex w-full flex-col gap-2 lg:w-auto;
+  }
+  .filter-group label {
+    @apply text-sm font-semibold text-slate-700;
+  }
+  .filter-group select,
+  .filter-group input {
+    @apply w-full min-w-0 rounded-lg border border-slate-300 px-3 py-2.5 outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 lg:min-w-52;
+  }
+  .approve-button,
+  .reject-button {
+    @apply rounded-lg px-3 py-2 text-xs font-semibold transition;
+  }
+  .approve-button {
+    @apply bg-emerald-100 text-emerald-800 hover:bg-emerald-200;
+  }
+  .reject-button {
+    @apply bg-red-100 text-red-800 hover:bg-red-200;
+  }
+  .status-badge {
+    @apply inline-flex rounded-full px-2.5 py-1 text-xs font-semibold;
+  }
+  .status-pending {
+    @apply bg-amber-100 text-amber-800;
+  }
+  .status-approved {
+    @apply bg-emerald-100 text-emerald-800;
+  }
+  .status-rejected {
+    @apply bg-red-100 text-red-800;
+  }
+  .attendance-today {
+    @apply mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4;
+  }
+  .attendance-today > div {
+    @apply rounded-lg bg-slate-50 p-4;
+  }
+  .attendance-today span {
+    @apply mb-1 block text-xs text-slate-500;
+  }
+  .attendance-today strong {
+    @apply text-base text-slate-900;
+  }
+  .attendance-actions {
+    @apply flex items-center justify-center;
+  }
+  .attendance-completed {
+    @apply font-semibold text-emerald-700;
+  }
+}
+
+@media (max-width: 767px) {
+  .sidebar {
+    @apply static block w-full;
+  }
+  .sidebar nav {
+    @apply grid grid-cols-2 gap-2 sm:grid-cols-3;
+  }
+  .sidebar nav a {
+    @apply px-3 py-2 text-center text-xs;
+  }
+  .main-content {
+    @apply ml-0;
+  }
+}
