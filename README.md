@@ -821,6 +821,12 @@ Change Password
 
 ---
 
+## AI Usage Disclosure
+
+AI tools were used during the development of this project for guidance, debugging assistance, code suggestions, and documentation support.
+
+The project requirements, implementation decisions, testing, integration, and final review were handled by me.
+
 # 21. Testing
 
 ## HR Testing
