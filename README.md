@@ -507,7 +507,29 @@ Rejected
 
 ---
 
-# 15. API Endpoints
+# 15. Default Login Credentials
+
+Use these demo accounts for testing the application:
+
+## HR Login
+
+```text
+Email: hr@hrms.com
+Password: admin123
+```
+
+## Employee Login
+
+```text
+Email: rahul@hrms.com
+Password: rahul123
+```
+
+Use the HR account to review employee activity, leave requests, and dashboard data.
+
+---
+
+# 16. API Endpoints
 
 ## Authentication
 
