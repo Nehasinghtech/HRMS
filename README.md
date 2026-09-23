@@ -823,9 +823,14 @@ Change Password
 
 ## AI Usage Disclosure
 
-AI tools were used during the development of this project for guidance, debugging assistance, code suggestions, and documentation support.
+AI tools were used during the development of this project for:
+- Understanding and clarifying technical requirements.
+- Getting guidance on implementation approaches.
+- Debugging and resolving development issues.
+- Reviewing and improving code where required.
+- Preparing project documentation and README content.
 
-The project requirements, implementation decisions, testing, integration, and final review were handled by me.
+The project requirements, implementation decisions, integration, testing, and final review were handled by me.
 
 # 21. Testing
 
