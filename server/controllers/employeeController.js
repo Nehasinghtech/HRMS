@@ -157,13 +157,11 @@ const uploadMyPhoto = async (req, res) => {
 
     res.status(200).json({ success: true, employee });
   } catch (error) {
-    res
-      .status(500)
-      .json({
-        success: false,
-        message: "Failed to upload photo",
-        error: error.message,
-      });
+    res.status(500).json({
+      success: false,
+      message: "Failed to upload photo",
+      error: error.message,
+    });
   }
 };
 
